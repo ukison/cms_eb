@@ -1,0 +1,6 @@
+<h1>Articles</h1>
+<ul>
+{% for article in object_list %}
+    <li>{{ article.name }}</li>
+{% empty %{% endfor %}
+</ul>
