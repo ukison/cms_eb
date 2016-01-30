@@ -19,5 +19,5 @@ from story.views import StoryList
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^story/$', StoryList.as_view()),
+    url(r'^$', StoryList.as_view()),
 ]
