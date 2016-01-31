@@ -3,4 +3,8 @@ from story.models import Story
 
 # Register your models here.
 
-admin.site.register(Story)
+
+class StoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'created', 'modified')
+
+admin.site.register(Story, StoryAdmin)
