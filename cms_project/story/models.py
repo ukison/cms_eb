@@ -1,6 +1,5 @@
 from django.db import models
 from markdown import markdown
-from datetime import datetime
 
 # Create your models here.
 
@@ -13,8 +12,12 @@ class Story(models.Model):
     modified = models.DateTimeField(auto_now=True)
 
     def save(self, *args, **kwargs):
-        self.html_content = markdown(self.markdown_content)
+        self.html_content = markdown(self.markdown_content,
+                                     extensions=['markdown.extensions.nl2br'])
         super(Story, self).save(*args, **kwargs)
-        
+
+    def get_absolute_url(self):
+        return '%d/' % self.pk
+
     class Meta:
         verbose_name_plural = 'stories'
