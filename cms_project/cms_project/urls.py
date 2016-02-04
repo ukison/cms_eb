@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from story.views import StoryList, StoryDetail
+from story.views import StoryList, StoryDetail, search
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', StoryList.as_view()),
     url(r'^(?P<id>[\d]+)/$', StoryDetail.as_view()),
+    url(r'^search/', search, name='story-search'),
 ]

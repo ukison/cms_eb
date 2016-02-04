@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock title%}</title>
+</head>
+<body>
+	<form action="{% url 'story-search' %}" method="get">
+		Search:<br>
+		<input type="text" name="search"></input><br><br>
+		<input type="submit" value="Submit">
+	</form>
+	{% block content %}{% endblock content %}
+</body>
+</html>

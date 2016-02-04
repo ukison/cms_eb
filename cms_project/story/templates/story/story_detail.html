@@ -1,8 +1,7 @@
-<html>
-    <head>
-        <title>{{object.name}}</title>
-    </head>
-    <body>
-        {{object.html_content|safe}}
-    </body>
-</html>
+{% extends "story/base.html" %}
+{% block title %}
+	{{object.name}}
+{% endblock title %}
+{% block content %}
+	{{object.html_content|safe}}
+{% endblock content %}
