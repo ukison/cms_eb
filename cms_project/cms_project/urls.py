@@ -19,7 +19,7 @@ from story.views import StoryList, StoryDetail, search
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', StoryList.as_view()),
+    url(r'^$', StoryList.as_view(), name='project-home'),
     url(r'^(?P<id>[\d]+)/$', StoryDetail.as_view()),
     url(r'^search/', search, name='story-search'),
 ]
