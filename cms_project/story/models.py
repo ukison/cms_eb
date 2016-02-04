@@ -17,7 +17,7 @@ class Story(models.Model):
         super(Story, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return '%d/' % self.pk
+        return '/%d/' % self.pk
 
     class Meta:
         verbose_name_plural = 'stories'
