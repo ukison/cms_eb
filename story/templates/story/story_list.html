@@ -1,0 +1,14 @@
+{% extends "story/base.html" %}
+{% block title %}Articles{% endblock title %}
+{% block content %}
+	<h1>Articles</h1>
+	<ul>
+		{% for article in object_list %}
+		    <li>
+		        <a href={{ article.get_absolute_url }}>{{ article.name }} - {{ article.modified }}</a>
+		    </li>
+		{% empty %}
+		    <li>No articles yet.</li>
+		{% endfor %}
+	</ul>
+{% endblock content %}
